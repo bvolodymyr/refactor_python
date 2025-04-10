@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна</title>
+</head>
+<body>
+    <h1>Вітаємо на сайті продажу велосипедів!</h1>
+
+    {% if session['user'] %}
+        <p>Ви увійшли як <strong>{{ session['user'] }}</strong></p>
+        <a href="/logout">Вийти</a> |
+    {% else %}
+        <a href="/login">Увійти</a> |
+        <a href="/register">Реєстрація</a> |
+    {% endif %}
+
+    <a href="/order">Оформити замовлення</a> |
+    <a href="/orders">Переглянути замовлення</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформлення замовлення</title>
+</head>
+<body>
+    <h1>Оформлення замовлення</h1>
+    <form action="/order" method="post">
+        <label>Ім'я користувача:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Тип велосипеда:</label>
+        <select name="bike_type">
+            <option value="Звичайний">Звичайний велосипед</option>
+            <option value="Електро">Електровелосипед</option>
+        </select><br>
+
+        <label>Дата замовлення:</label>
+        <input type="date" name="date" required><br>
+
+        <button type="submit">Оформити</button>
+    </form>
+    <a href="/">Назад</a>
+</body>
+</html>

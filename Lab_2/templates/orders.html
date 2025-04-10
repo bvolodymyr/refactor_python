@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список замовлень</title>
+</head>
+<body>
+    <h1>Список замовлень</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Користувач</th>
+            <th>Тип велосипеда</th>
+            <th>Дата</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order[0] }}</td>
+            <td>{{ order[1] }}</td>
+            <td>{{ order[2] }}</td>
+            <td>{{ order[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Назад</a>
+</body>
+</html>

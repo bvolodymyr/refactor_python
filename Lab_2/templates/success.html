@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Замовлення успішне</title>
+</head>
+<body>
+    <h1>Ваше замовлення підтверджено!</h1>
+    <p>Тип: {{ bike.type }}</p>
+    {% if bike.battery %}
+        <p>Батарея: {{ bike.battery }}</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">На головну</a>
+</body>
+</html>
