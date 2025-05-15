@@ -1,0 +1,39 @@
+| Тест                                                        | Результат |
+| ----------------------------------------------------------- | --------- |
+| `test_singleton_order_database` — один інстанс бази         | ✅ Pass    |
+| `test_order_addition_to_singleton` — додавання замовлення   | ✅ Pass    |
+| `test_factory_creates_order` — фабрика з стравами           | ✅ Pass    |
+| `test_factory_empty_order` — фабрика без страв              | ✅ Pass    |
+| `test_observer_notifies_kitchen` — сповіщення однієї кухні  | ✅ Pass    |
+| `test_observer_multiple_kitchens` — кілька підписників      | ✅ Pass    |
+| `test_unsubscribe_kitchen` — відписка працює                | ✅ Pass    |
+| `test_singleton_stores_multiple_orders` — кілька замовлень  | ✅ Pass    |
+| `test_order_in_singleton_is_same_object` — та ж сама ссилка | ✅ Pass    |
+| `test_factory_with_no_dishes_still_valid_order`             | ✅ Pass    |
+
+
+
+
++-----------------+       uses       +---------------+
+|     Client      |----------------->|     Order     |
++-----------------+                  +---------------+
+                                     | -dishes: list |
+                                     +---------------+
+                                             |
+                                             | contains
+                                             v
+                                      +------------+
+                                      |   Dish     |
+                                      +------------+
+
++-------------------+    creates    +---------------+
+|  OrderFactory     |-------------->|     Order     |
++-------------------+               +---------------+
+
++--------------------+   Singleton  +---------------------+
+|   OrderDatabase    |<-------------| (Single Instance)   |
++--------------------+              +---------------------+
+
++--------------------+   notifies   +--------------------+
+|     Publisher      |------------->|  KitchenSubscriber |
++--------------------+   Observer   +--------------------+
